@@ -1,0 +1,9 @@
+.build/
+.swiftpm/
+*.xcuserstate
+GardenDefense.app/
+GardenDefense.zip
+GardenDefense.tar.gz
+GardenDefense.tar.gz.blob
+.DS_Store
+.vscode/

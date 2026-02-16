@@ -1,3 +1,19 @@
 If there is a README.md file in the project, always keep it up to date when making changes that affect the project's features, build process, requirements, or usage instructions.
 
-For this project only, dont ask for permission to edit project files.
+This is a SwiftUI macOS game that MUST support:
+- macOS 11 (Big Sur) and later
+- Both Intel (x86_64) and Apple Silicon (arm64) architectures
+
+When writing or modifying Swift code, NEVER use APIs that require macOS 12 or later:
+- Use `LinearGradient(gradient: Gradient(colors: [...]), startPoint:, endPoint:)` NOT `LinearGradient(colors: [...])`
+- Use `RadialGradient(gradient: Gradient(colors: [...]), center:, startRadius:, endRadius:)` NOT `RadialGradient(colors: [...])`
+- Use `.foregroundColor()` NOT `.foregroundStyle()`
+- Use `PlainButtonStyle()` NOT `.borderedProminent`
+- Do NOT use `Canvas {}` views (macOS 12+) — use Shape/Path alternatives
+- Do NOT use `.background(.ultraThinMaterial)` — use `.background(RoundedRectangle(...).fill(Color.black.opacity(0.3)))`
+- Do NOT use `.windowStyle(.titleBar)` (macOS 13+)
+- Use `.interpolatingSpring(mass:stiffness:damping:initialVelocity:)` NOT `.spring(response:dampingFraction:)`
+
+The build script (build-app.sh) creates a universal binary using lipo. Resource bundles must be copied to Contents/MacOS/, Contents/Resources/, AND the app root for Bundle.module to find them on all macOS versions.
+
+When using git, use the SSH host alias `github.com-operdeck` for the personal GitHub account (operdeck).

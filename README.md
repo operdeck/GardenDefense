@@ -121,6 +121,22 @@ GardenDefense/
 4. Save up 35 points for the hedgehog - it's very effective!
 5. Watch for Tiger Snails (orange/black striped) - they're helpers, don't click them!
 
+### 🚀 Creating a GitHub Release
+
+To publish a downloadable binary on GitHub:
+
+```bash
+# Build the app first
+./build-app.sh
+
+# Create a release with the binary attached
+gh release create v1.0 GardenDefense.tar.gz \
+  --title "Garden Defense v1.0" \
+  --notes "Universal binary for macOS 11+ (Intel & Apple Silicon)"
+```
+
+Users can then download `GardenDefense.tar.gz` from the [Releases](../../releases) page.
+
 ## 📋 TODO & Feedback from Initial Users
 
 - [ ] **Progressive difficulty** — The game is too easy once you've gathered some initial points. Make it successively harder. Consider adding levels.

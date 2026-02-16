@@ -2,7 +2,7 @@
 
 A SwiftUI tower defense game where you protect your vegetable garden from hungry snails!
 
-![Garden Defense Screenshot](screenshot.jpg)
+<img src="screenshot.jpg" alt="Garden Defense Screenshot" width="400">
 
 ## 🎮 Game Overview
 
